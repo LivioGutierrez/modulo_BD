@@ -52,13 +52,13 @@ SELECT * FROM INSCRITOS;
 
 -- ¿Cuántos registros hay?
 
-SELECT COUNT(cantidad) FROM INSCRITOS; -- CORRECTO
+SELECT COUNT(cantidad) as registros FROM INSCRITOS; -- CORRECTO
 
 -- ¿Cuántos inscritos hay en total?
-SELECT COUNT(cantidad) FROM INSCRITOS;
+SELECT SUM(cantidad) as total FROM INSCRITOS;
 
 -- ¿Cuál o cuáles son los registros de mayor antigüedad?
-SELECT * FROM INSCRITOS ORDER BY fecha ASC;
+SELECT cantidad, fecha FROM INSCRITOS ORDER BY fecha ASC LIMIT 3;
 
 -- ¿Cuántos inscritos hay por día? (entendiendo un día como una fecha distinta de ahora en adelante)
 SELECT fecha, SUM(cantidad) AS inscritos_por_dia FROM INSCRITOS GROUP BY fecha ORDER BY fecha ASC;
