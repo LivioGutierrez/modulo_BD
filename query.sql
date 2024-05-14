@@ -48,3 +48,12 @@ DROP TABLE nombre de la tabla
 
 --MODIFICANDO LA TABLA
 alter table nombre de la tabla
+
+-- Crear usuario
+CREATE USER Maty WITH PASSWORD 'Admin1234';
+
+-- Crear base de datos para el usuario
+CREATE DATABASE Maty WITH OWNER Maty;
+
+--Asignar permisos
+ALTER USER Maty WITH SUPERUSER CREATEDB CREATEROLE;
